@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="btn" style="font-family: 'Courier New', Courier, monospace; color:chartreuse; background-color: black;">Ваша запись была удалена</button>
+
+   <script>
+       let btn = document.getElementById('btn')
+       btn.addEventListener('click', function(){
+           btn.remove()
+       })
+   </script>
+</body>
+</html>
