@@ -6,4 +6,16 @@ class ToDo(models.Model):
     created_at = models.DateField(auto_now_add=True)
     is_closed = models.BooleanField(default=False)
     is_favorite = models.BooleanField(default=False)
+
+
+class Books(models.Model):
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    price = models.CharField(max_length=10000)
+    genre = models.CharField(max_length=80)
+    author = models.CharField(max_length=50)
+    year = models.TimeField(auto_now_add=True)
+    date = models.DateField(auto_now_add=True)
+
     
