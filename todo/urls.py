@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from main.views import *
-
 from django.conf.urls.static import static
 
 
