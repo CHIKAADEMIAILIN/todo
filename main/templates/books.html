@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ToDo</title>
+        <title>Books</title>
         <!--<link rel="stylesheet" href="./styles/index.css">-->
         <link rel="stylesheet" href="{% static 'styles/index.css' %}">
         <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
@@ -14,17 +14,21 @@
     <section>
 
         <div class="create_container">
-          <input class="create_input" type="text" placeholder="Напишите сюда новую задачу">
-          <button class="create_button">Добавить</button>
+        <form action="{% url 'add-book' %}" method="POST">
+            {% csrf_token %}
+            <input class="create_input" type="text" placeholder="Напишите сюда новую задачу" name="book_title">
+            <button class="create_button">Добавить</button>
+        </form>
+         
         </div>
         <div class="todo_container">
             {% for book in book_list %}
              <div class="todo_item">
                 <div class="todo_item_header">
-                 <h4>{{ book.title}}</h4>
+                 <h4>{{ book.title }}</h4>
                 </div>
                 <div class="todo_item_footer">
-                    <p>{{ book.author }} - {{ book.year}}</p>
+                    <p>{{ book.subtitle }} - {{ book.description }} - {{ book.price }} - {{ book.genre }} - {{ book.author }} - {{ book.year}} - {{book.date}}</p>
                 </div>
             </div>
         {% endfor %}
