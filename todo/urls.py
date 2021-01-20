@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import homepage, test, second, third
 from django.conf import settings
+from main.views import *
+
 from django.conf.urls.static import static
 
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path("", homepage, name="home"),
     path("test/", test, name="test"),
     path("test2/", second, name="test2"),
-    path("test3/", third, name="test3")
+    path("test3/", third, name="test3"),
+    path("add-todo/", add_todo, name="add-todo"),
 ]   + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
