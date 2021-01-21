@@ -68,4 +68,9 @@ def select_book(request, id):
     return redirect(third)
 
 
- 
+def BooksDetail(request, id):
+    book = Books.objects.get(id=id)
+    book.save()
+    title = Books.objects.all()
+    return render(request, "books_detail.html", {'title': title})
+    #return HttpResponse(render(request, "books_detail.html"))
