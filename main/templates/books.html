@@ -29,12 +29,27 @@
         </div>
         <div class="todo_container">
             {% for book in book_list %}
-             <div class="todo_item">
+             <div class="todo_item
+
+             {% if book.is_favorites %}
+
+                     marked
+
+             {% endif%}
+             ">
                 <div class="todo_item_header">
                  <h4>{{ book.title }} -  {{ book.subtitle }} - {{ book.description }} - {{ book.price }} - {{ book.genre }} - {{ book.author }} - {{ book.year}}</h4>
                   </div> 
                     <div class="todo_item_footer">
                     <p>{{book.date}}</p>
+                  
+                    <a href="{% url 'delete-book' book.id %}"><button>Удаление</button></a>
+                    
+                    
+
+                    <a href="{% url 'select-book' book.id %}"><button>Избранное</button></a>
+             
+                     
                    </div>
                 </div>
         {% endfor %}
