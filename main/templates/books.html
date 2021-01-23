@@ -16,13 +16,13 @@
         <div class="create_container">
         <form action="{% url 'add-book' %}" method="POST">
             {% csrf_token %}
-            <input class="create_input" type="text" name="book_title">
-            <input type="text" name="book_subtitle">
-            <input type="text" name="book_description">
-            <input type="number" name="book_price">
-            <input type="text" name="book_genre">
-            <input type="text" name="book_author">
-            <input type="date" name="book_year"> 
+            <input class="create_input" placeholder="title" type="text" name="book_title">
+            <input type="text"  placeholder="subtitle" name="book_subtitle">
+            <input type="text" placeholder="description" name="book_description">
+            <input type="number" placeholder="price" name="book_price">
+            <input type="text" placeholder="genre" name="book_genre">
+            <input type="text" placeholder="author" name="book_author">
+            <input type="date" placeholder="year" name="book_year"> 
             <button class="create_button">Добавить</button>
         </form>
          
@@ -38,7 +38,8 @@
              {% endif%}
              ">
                 <div class="todo_item_header">
-                 <h4>{{ book.title }} -  {{ book.subtitle }} - {{ book.description }} - {{ book.price }} - {{ book.genre }} - {{ book.author }} - {{ book.year}}</h4>
+                 <h4>{{ book.title }} - {{ book.subtitle }} - {{ book.description }} - {{ book.book_price}} - {{ book.genre }} - {{ book.author }} - {{ book.year }}</h4>
+                 
                   </div> 
                     <div class="todo_item_footer">
                     <p>{{book.date}}</p>

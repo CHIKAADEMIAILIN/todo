@@ -45,13 +45,13 @@ def unmark_todo(request, id):
 
 def add_book(request):
     form = request.POST
-    title = form["book_title"]
-    subtitle = form["book_subtitle"]
-    description = form["book_description"]
-    price = form["book_price"]
-    genre = form["book_genre"]
-    author = form["book_author"]
-    year = form["book_year"]
+    title = form["book_title"],
+    subtitle = form["book_subtitle"],
+    description = form["book_description"],
+    price = form["book_price"],
+    genre = form["book_genre"],
+    author = form["book_author"],
+    year = form["book_year"],
     book = Books(title=title, subtitle=subtitle, description=description, price=price, genre=genre, author=author, year=year)   
     book.save()
     return redirect(third) 
