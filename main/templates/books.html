@@ -17,12 +17,12 @@
         <form action="{% url 'add-book' %}" method="POST">
             {% csrf_token %}
             <input class="create_input" placeholder="title" type="text" name="book_title">
-            <input type="text"  placeholder="subtitle" name="book_subtitle">
-            <input type="text" placeholder="description" name="book_description">
-            <input type="number" placeholder="price" name="book_price">
-            <input type="text" placeholder="genre" name="book_genre">
-            <input type="text" placeholder="author" name="book_author">
-            <input type="date" placeholder="year" name="book_year"> 
+            <input class="create_input" type="text"  placeholder="subtitle" name="book_subtitle">
+            <input class="create_input" type="text" placeholder="description" name="book_description">
+            <input class="create_input" type="number" placeholder="price" name="book_price">
+            <input class="create_input" type="text" placeholder="genre" name="book_genre">
+            <input class="create_input" type="text" placeholder="author" name="book_author">
+            <input class="create_input" type="date" placeholder="year" name="book_year"> 
             <button class="create_button">Добавить</button>
         </form>
          
@@ -44,13 +44,11 @@
                     <div class="todo_item_footer">
                     <p>{{book.date}}</p>
                   
-                    <a href="{% url 'delete-book' book.id %}"><button>Удаление</button></a>
+                    <a href="{% url 'delete-book' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >Удаление</button></a>
                     
-                    
-
-                    <a href="{% url 'select-book' book.id %}"><button>Избранное</button></a>
+                    <a href="{% url 'select-book' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >Избранное</button></a>
              
-                    <a href="{% url 'books-detail' book.id %}"><button>BooksDetail</button></a> 
+                    <a href="{% url 'books-detail' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >BooksDetail</button></a> 
                    </div>
                 </div>
         {% endfor %}
