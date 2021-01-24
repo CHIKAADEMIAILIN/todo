@@ -41,7 +41,14 @@ def unmark_todo(request, id):
     todo = ToDo.objects.get(id=id)
     todo.is_favorite = False
     todo.save()
-    return redirect(test)         
+    return redirect(test) 
+
+
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test)                
 
 def add_book(request):
     form = request.POST
@@ -74,3 +81,4 @@ def BooksDetail(request, id):
     title = Books.objects.all()
     return render(request, "books_detail.html", {'title': title})
     #return HttpResponse(render(request, "books_detail.html"))
+
