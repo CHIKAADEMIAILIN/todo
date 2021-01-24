@@ -76,9 +76,7 @@ def select_book(request, id):
 
 
 def BooksDetail(request, id):
-    book = Books.objects.get(id=id)
-    book.save()
-    title = Books.objects.all()
-    return render(request, "books_detail.html", {'title': title})
-    #return HttpResponse(render(request, "books_detail.html"))
+    book_object = Books.objects.filter(id=id)
+    return render(request, "books_detail.html", {'book_list': book_object})
+    
 
