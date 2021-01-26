@@ -13,7 +13,7 @@
 <body style="background-color: bisque;">
 
 
-    <h1 style="text-align: center; font-size: 25px; padding: 3px solid blue; font-weight: bolder; margin-top: 10px; color: blue;">БИБЛИОТЕКА</h1>
+    <h1 style="text-align: center; font-size: 55px; padding: 3px solid blue; font-weight: bolder; margin-top: 10px; color: blue;">БИБЛИОТЕКА</h1>
     <section>
 
         <div class="create_container">
@@ -37,11 +37,12 @@
              {% if book.is_favorites %}
 
                      marked
-
+             {% elif book.is_closed %}        
+                     done
              {% endif%}
              ">
                 <div class="todo_item_header">
-                 <h4>{{ book.title }} - {{ book.subtitle }} - {{ book.description }} - {{ book.price}} - {{ book.genre }} - {{ book.author }} - {{ book.year }}</h4>
+                 <h4><a href="{% url 'close-book' book.id %}">{{ book.title }} - {{ book.subtitle }} - {{ book.description }} - {{ book.price}} - {{ book.genre }} - {{ book.author }} - {{ book.year }}</a></h4>
                 </div> 
                 <p>{{book.date}}</p>
                 <div class="todo_item_footer">

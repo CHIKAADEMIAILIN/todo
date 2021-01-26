@@ -78,5 +78,11 @@ def select_book(request, id):
 def BooksDetail(request, id):
     book_object = Books.objects.filter(id=id)
     return render(request, "books_detail.html", {'book_list': book_object})
+
+def close_book(request, id):
+    book = Books.objects.get(id=id)
+    book.is_closed = not book.is_closed
+    book.save()
+    return redirect(third)       
     
 
