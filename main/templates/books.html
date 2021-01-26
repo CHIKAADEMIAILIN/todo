@@ -10,7 +10,10 @@
         <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
         <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
 </head>
-<body>
+<body style="background-color: bisque;">
+
+
+    <h1 style="text-align: center; font-size: 25px; padding: 3px solid blue; font-weight: bolder; margin-top: 10px; color: blue;">БИБЛИОТЕКА</h1>
     <section>
 
         <div class="create_container">
@@ -38,18 +41,18 @@
              {% endif%}
              ">
                 <div class="todo_item_header">
-                 <h4>{{ book.title }} - {{ book.subtitle }} - {{ book.description }} - {{ book.book_price}} - {{ book.genre }} - {{ book.author }} - {{ book.year }}</h4>
-                 
-                  </div> 
-                    <div class="todo_item_footer">
-                    <p>{{book.date}}</p>
-                  
+                 <h4>{{ book.title }} - {{ book.subtitle }} - {{ book.description }} - {{ book.price}} - {{ book.genre }} - {{ book.author }} - {{ book.year }}</h4>
+                </div> 
+                <p>{{book.date}}</p>
+                <div class="todo_item_footer">
+                    
                     <a href="{% url 'delete-book' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >Удаление</button></a>
                     
                     <a href="{% url 'select-book' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >Избранное</button></a>
              
                     <a href="{% url 'books-detail' book.id %}"><button style="background-color: blue; color: aliceblue; font-weight: bold; text-transform: uppercase; border-radius: 3px; cursor: pointer;" >BooksDetail</button></a> 
-                   </div>
+                  
+                </div>
                 </div>
         {% endfor %}
         </div>
